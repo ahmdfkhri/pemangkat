@@ -1,0 +1,7 @@
+// Scope Bootstrap and Summernote styles to `.bootstrap-styled`
+.bootstrap-styled {
+  // Import only necessary Bootstrap SCSS parts for Summernote
+  @import "node_modules/bootstrap/dist/css/bootstrap";
+
+  @import "node_modules/summernote/dist/summernote-lite";
+}
