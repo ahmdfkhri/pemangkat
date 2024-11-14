@@ -1,4 +1,15 @@
 <x-layout.guest>
+  <main class="w-full flex flex-col items-center">
+    <div class="md:w-2/3 w-full flex flex-col items-center">
+      <div class="bootstrap-styled">
+        {!! $greetings->content ?? "" !!}
+      </div>
+      
+      <div class="bootstrap-styled w-full">
+        {!! $messages->content ?? "" !!}
+      </div>
+    </div>
+  </main>
   <x-article-slider 
     type="newest"
     slider-title="Berita Terkini"

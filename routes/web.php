@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DokumenPublikController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'guest.beranda.index')->name('beranda.index.guest');
+Route::get('/', [BerandaController::class, 'index_guest'])->name('beranda.index.guest');
 
 Route::get('/visi-misi', [VisiMisiController::class, 'index_guest'])->name('visi-misi.index.guest');
 
@@ -22,7 +23,8 @@ Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel
 Route::prefix('/admin')->group(function () {
   Route::view('/', 'admin.index')->name('admin.dashboard');
 
-  Route::view('/beranda', 'admin.beranda.index')->name('beranda.index.admin');
+  Route::get('/beranda', [BerandaController::class, 'index_admin'])->name('beranda.index.admin');
+  Route::put('/beranda', [BerandaController::class, 'update'])->name('admin.beranda.update');
 
   Route::get('/visi-misi', [VisiMisiController::class, 'index_admin'])->name('visi-misi.index.admin');
   Route::post('/visi-misi', [VisiMisiController::class, 'store'])->name('visi-misi.store.admin');

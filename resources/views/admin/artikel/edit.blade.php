@@ -2,7 +2,7 @@
   <header class="mb-4 p-4 bg-white shadow-md rounded-md">
     <h1 class="font-bold text-2xl">Edit Artikel</h1>
   </header>
-  <section class="flex flex-col p-4 gap-2 bg-white rounded-lg shadow-sm pb-20 mb-4">
+  <section class="flex flex-col p-4 gap-2 bg-white rounded-lg shadow-sm mb-4">
     <form action="{{ route('artikel.update.admin', $article->id) }}" method="POST" enctype="multipart/form-data" class="flex flex-col gap-2">
       @csrf
       @method('PUT')
@@ -39,8 +39,19 @@
       <script>
         $('#summernote').summernote({
           placeholder: 'Konten Artikel',
-          height: 300,
+          height: 450,
           tabsize: 2,
+          toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'italic', 'underline', 'clear']],
+          ['fontname', ['fontname']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
         });
       </script>
       <x-form.button type="submit">
