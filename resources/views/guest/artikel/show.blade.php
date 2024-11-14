@@ -6,7 +6,7 @@
     </div>
   </header>
   <main class="flex flex-col items-center">
-    <div class="md:w-2/3">
+    <div class="md:w-2/3 bootstrap-styled">
       {!! $article->content !!}
     </div>
   </main>

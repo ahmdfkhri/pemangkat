@@ -31,7 +31,11 @@
         </div>
       </div>
       <label class="block text-sm font-medium text-gray-900 dark:text-white" for="summernote">Konten</label>
-      <textarea id="summernote" name="content">{{ $article->content }}</textarea>
+      <div class="bootstrap-styled">
+        <textarea id="summernote" class="bg-white w-full z-50" name="content">
+          {{ $article->content }}
+        </textarea>
+      </div>
       <script>
         $('#summernote').summernote({
           placeholder: 'Konten Artikel',
